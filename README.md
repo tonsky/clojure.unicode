@@ -6,7 +6,7 @@ Clojure library that binds rich Unicode symbols to traditional clojure.core macr
 
 ```
 :dependencies [
-  [clojure.unicode "0.2.0"]
+  [clojure.unicode "0.2.1"]
 ]
 ```
 
@@ -38,6 +38,10 @@ Clojure library that binds rich Unicode symbols to traditional clojure.core macr
 (∄ even? [1 5 3]) ;; ⇒ true
 (∪ #{1 2} #{2 3}) ;; ⇒ #{ 1 3 2 }
 (∩ #{1 2} #{2 3}) ;; ⇒ #{ 2 }
+(⊆ #{2} #{1 2 3}) ;; ⇒ true
+(⊇ #{1 2} #{1})   ;; ⇒ true
+(⊈ #{1 2} #{1 3}) ;; ⇒ true
+(⊉ #{1 2} #{1 3}) ;; ⇒ true
 (∈ ∅ 1)           ;; ⇒ false
 (∖ #{1 2 3} #{3}) ;; ⇒ #{ 1 2 }
 
@@ -47,9 +51,14 @@ Clojure library that binds rich Unicode symbols to traditional clojure.core macr
 ((∘ str inc) 1)       ;; ⇒ "2"
 ```
 
+## How do I type all these symbols?
+
+This part is left as an exercise for the reader.
+
 ## Changelog
 
-0.2.0: Swapped arguments order for ∈∉, added ∋∌
+0.2.1: Subsets and supersets tests added: `⊆`, `⊇`, `⊈`, `⊉`
+0.2.0: Swapped arguments order for `∈` and `∉`, added `∋` and `∌`
 0.1.0: Initial release
 
 ## License

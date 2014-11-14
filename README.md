@@ -1,8 +1,8 @@
-# clojure-unicode
+## clojure-unicode
 
 Clojure library that binds rich Unicode symbols to traditional clojure.core macros and operations.
 
-## Usage
+### Usage
 
 ```
 :dependencies [
@@ -51,17 +51,17 @@ Clojure library that binds rich Unicode symbols to traditional clojure.core macr
 ((∘ str inc) 1)       ;; ⇒ "2"
 ```
 
-## How do I type all these symbols?
+### How do I type all these symbols?
 
 This part is left as an exercise for the reader.
 
-## Changelog
+### Changelog
 
-0.2.1: Subsets and supersets tests added: `⊆`, `⊇`, `⊈`, `⊉`
-0.2.0: Swapped arguments order for `∈` and `∉`, added `∋` and `∌`
-0.1.0: Initial release
+0.2.1: Subsets and supersets tests added: `⊆`, `⊇`, `⊈`, `⊉`  
+0.2.0: Swapped arguments order for `∈` and `∉`, added `∋` and `∌`  
+0.1.0: Initial release  
 
-## License
+### License
 
 Copyright © 2014 Nikita Prokopov
 

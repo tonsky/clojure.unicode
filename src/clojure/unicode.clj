@@ -4,8 +4,8 @@
 
 (def ≠ not=)
 (def ¬ not)
-(defmacro ∧ [& rest] `(and ~@rest))
-(defmacro ∨ [& rest] `(or ~@rest))
+(def ^:macro ∧ #'and)
+(def ^:macro ∨ #'or)
 
 (def × *)
 (def ÷ /)
@@ -18,8 +18,10 @@
 (defn ∑ [coll] (reduce + coll))
 (defn ∏ [coll] (reduce * coll))
 
-(def ∈ contains?)
-(defn ∉ [coll key] (¬ (∈ coll key)))
+(def ∋ contains?)
+(defn ∌ [coll key] (¬ (∋ coll key)))
+(defn ∈ [key coll] (∋ coll key))
+(defn ∉ [key coll] (∌ coll key))
 (def ∀ every?)
 (def ∃ some)
 (def ∄ not-any?)
@@ -28,7 +30,7 @@
 (def ∖ clojure.set/difference)
 (def ∅ #{})
 
-(defmacro ↠ [& rest] `(->> ~@rest))
-(defmacro → [& rest] `(-> ~@rest))
-(defmacro λ [& rest] `(fn ~@rest))
+(def ^:macro ↠ #'->>)
+(def ^:macro → #'->)
+(def ^:macro λ #'fn)
 (def ∘ comp)

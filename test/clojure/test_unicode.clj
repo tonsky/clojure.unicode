@@ -25,14 +25,16 @@
 
 (deftest sets
   (are [x y] (= x y)
-    (∈ #{1 2 3} 1)    true
-    (∉ #{1 2 3} 5)    true
+    (∋ #{1 2 3} 1)    true
+    (∌ #{1 2 3} 5)    true
+    (∈ 1 #{1 2 3})    true
+    (∉ 5 #{1 2 3})    true 
     (∀ odd? #{1 5 3}) true
     (∃ even? [1 2 3]) true
     (∄ even? [1 5 3]) true
     (∪ #{1 2} #{2 3}) #{1 2 3}
     (∩ #{1 2} #{2 3}) #{2}
-    (∈ ∅ 1)           false
+    (∋ ∅ 1)           false
     (∖ #{1 3} #{3 4}) #{1}))
 
 (deftest functions
